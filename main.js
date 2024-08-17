@@ -37,8 +37,8 @@ if (currentTheme) {
 // the number of tasks
 let counter;
 let numberIterationContainer = document.getElementById("numbers");
-let tasks = document.getElementById("todo__tasks");
-let collection = tasks.children;
+let tasks_container = document.getElementById("todo__tasks");
+let collection = tasks_container.children;
 let activeElements = Array.from(collection).filter((element) =>
     element.classList.contains("active")
 );
@@ -51,74 +51,74 @@ btnClear.addEventListener("click", function () {
     activeElements.map((e) => e.remove());
 });
 
-// // check if you press complete button it will show only completed tasks and display none for all other tasks
+// check if you press complete button it will show only completed tasks and display none for all other tasks
+let tasks = document.querySelectorAll(".todo__tasks__task");
+let btnComplete = document.getElementById("complete");
 
-// let btnComplete = document.getElementById("complete");
+for (let el = 0; el < tasks.length; el++) {
+    btnComplete.addEventListener("click", function () {
+        console.log(tasks[el]);
 
-// for (let el = 0; el < tasks.length; el++) {
-//     btnComplete.addEventListener("click", function () {
-//         console.log(tasks[el]);
+        if (tasks[el].classList.value.includes("active")) {
+            tasks[el].classList.remove("non");
+        } else {
+            // console.log("bye");
+            tasks[el].classList.add("non");
+        }
+    });
+}
+// check if you press active button it will show only active tasks and display none for all other tasks
 
-//         if (tasks[el].classList.value.includes("active")) {
-//             tasks[el].classList.remove("non");
-//         } else {
-//             // console.log("bye");
-//             tasks[el].classList.add("non");
-//         }
-//     });
-// }
-// // check if you press active button it will show only active tasks and display none for all other tasks
+let btnActive = document.getElementById("active");
 
-// let btnActive = document.getElementById("active");
+for (let el = 0; el < tasks.length; el++) {
+    /////////////////////ADDING styles to component/////////////////////////
+    btnActive.addEventListener("click", function () {
+        counter = 0;
+        if (tasks[el].classList.value.includes("active")) {
+            tasks[el].classList.add("non");
+            //
+        } else {
+            // tasks[el].classList.add("non");
 
-// for (let el = 0; el < tasks.length; el++) {
-//     /////////////////////ADDING styles to component/////////////////////////
-//     btnActive.addEventListener("click", function () {
-//         counter = 0;
-//         if (tasks[el].classList.value.includes("active")) {
-//             tasks[el].classList.add("non");
-//             //
-//         } else {
-//             // tasks[el].classList.add("non");
+            tasks[el].classList.remove("non");
 
-//             tasks[el].classList.remove("non");
+            //
+        }
+    });
+}
 
-//             //
-//         }
-//     });
-// }
+let btnAll = document.getElementById("all");
+for (let el = 0; el < tasks.length; el++) {
+    /////////////////////ADDING styles to component/////////////////////////
+    btnAll.addEventListener("click", function () {
+        counter = 0;
+        if (tasks[el].classList.value.includes("active")) {
+            tasks[el].classList.remove("non");
 
-// let btnAll = document.getElementById("all");
-// for (let el = 0; el < tasks.length; el++) {
-//     /////////////////////ADDING styles to component/////////////////////////
-//     btnAll.addEventListener("click", function () {
-//         counter = 0;
-//         if (tasks[el].classList.value.includes("active")) {
-//             tasks[el].classList.remove("non");
+            //
+        } else {
+            // console.log("bye");
+            // tasks[el].classList.add("non");
+            console.log("hiiii");
+            tasks[el].classList.remove("non");
 
-//             //
-//         } else {
-//             // console.log("bye");
-//             // tasks[el].classList.add("non");
-//             console.log("hiiii");
-//             tasks[el].classList.remove("non");
+            //
+        }
+    });
+}
 
-//             //
-//         }
-//     });
-// }
-
-// function makeIterations(tasks) {
-//     counter = 0;
-//     for (let el = 0; el < tasks.length; el++) {
-//         if (!tasks[el].classList.value.includes("active")) {
-//             counter++;
-//             numberIterationContainer.innerHTML = `${counter} iterations left`;
-//         }
-//     }
-// }
-// makeIterations(tasks);
-// numberIterationContainer.innerHTML = `${counter} iterations`;
+function makeIterations(tasks) {
+    counter = 0;
+    for (let el = 0; el < tasks.length; el++) {
+        if (!tasks[el].classList.value.includes("active")) {
+            counter++;
+            numberIterationContainer.innerHTML = `${counter} iterations left`;
+        }
+    }
+}
+makeIterations(tasks);
+numberIterationContainer.innerHTML = `${counter} iterations`;
 
 let task_container = document.getElementById("todo__tasks");
 let addButton = document.getElementById("plus");
