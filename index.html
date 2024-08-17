@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="dist/main.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <title>Frontend Mentor | Todo app</title>
+    </head>
+    <body>
+        <!-- <a id="btn-toggler" aria-label="Change to light theme">
+            <i class="fa-regular fa-sun" id="icon"></i>
+        </a>
+        <ul>
+            <li class="stars">ssssss<span class="x">x</span></li>
+            <li class="stars">ddddd<span class="x">x</span></li>
+            <li class="stars aaa">fffff done <span class="x">x</span></li>
+        </ul>
+
+         -->
+
+        <!-- Add dynamic number
+        items left All Active Completed Clear Completed Drag and drop to reorder
+        list -->
+        <header class="header" id="header">
+            <div class="container">
+                <div class="header__container">
+                    <span class="header__text">TODO</span>
+                    <a id="btn-toggler" aria-label="Change to light theme">
+                        <i class="fa-regular fa-sun" id="icon"></i>
+                    </a>
+                </div>
+                <div class="input_feild_container">
+                    <i class="fa-solid fa-plus" id="plus"></i>
+                    <input type="text" class="input_feild" id="input_feild" />
+                </div>
+            </div>
+            <div class="container">
+                <section class="todo">
+                    <div class="todo__tasks" id="todo__tasks">
+                        <span class="todo__tasks__task">
+                            <span class="check"
+                                ><i class="fa-solid fa-check"></i
+                            ></span>
+                            <span class="task_text">Doing the home work</span>
+                            <span class="remove_task"
+                                ><i class="fa-solid fa-xmark"></i
+                            ></span>
+                        </span>
+                        <span class="todo__tasks__task active">
+                            <span class="check"
+                                ><i class="fa-solid fa-check"></i
+                            ></span>
+                            <span class="task_text">Doing the home work</span>
+                            <span class="remove_task"
+                                ><i class="fa-solid fa-xmark"></i
+                            ></span>
+                        </span>
+                        <span class="todo__tasks__task active">
+                            <span class="check"
+                                ><i class="fa-solid fa-check"></i
+                            ></span>
+                            <span class="task_text">Doing the home work</span>
+                            <span class="remove_task"
+                                ><i class="fa-solid fa-xmark"></i
+                            ></span>
+                        </span>
+                    </div>
+                    <div class="todo__controls">
+                        <span id="numbers">iteraions</span>
+                        <div class="todo__controls__buttons">
+                            <span id="all" style>all</span>
+                            <span id="active" style>active</span>
+                            <span id="complete">Completed</span>
+                        </div>
+                        <span id="clear">Clear Completed</span>
+                    </div>
+                </section>
+            </div>
+        </header>
+
+        <script src="main.js"></script>
+    </body>
+</html>

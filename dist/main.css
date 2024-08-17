@@ -1,0 +1,167 @@
+:root {
+  --color_bg_todo: hsl(0, 0%, 98%);
+  --color_breaker: hsla(233, 11%, 84%, 0.4);
+  --color_bg: hsl(236, 33%, 92%);
+  --color_text: hsl(235, 19%, 35%);
+  --color_remove: hsl(233, 11%, 84%);
+  --color_hover: hsl(236, 9%, 61%);
+  --color_primary: hsl(220, 98%, 61%);
+  --color_linear1: hsla(192, 100%, 67%);
+  --color_linear2: hsla(280, 87%, 65%);
+}
+
+[data-theme=dark] {
+  --color_bg_todo: hsl(235, 24%, 19%);
+  --color_breaker: hsla(233, 11%, 84%, 0.1);
+  --color_bg: hsl(235, 21%, 11%);
+  --color_text: hsl(234, 39%, 85%);
+  --color_remove: hsl(234, 11%, 52%);
+  --color_hover: hsl(236, 33%, 92%);
+}
+
+html {
+  font-size: 62.25%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--color_bg);
+  color: var(--color_text);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.header {
+  width: 100%;
+  height: 50vh;
+  background-image: url(../images/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: hsl(0, 0%, 98%);
+  font-size: 3.2rem;
+  font-weight: 700;
+  padding: 4rem 2rem 0;
+}
+.header a {
+  cursor: pointer;
+}
+
+.non {
+  display: none !important;
+}
+
+.container {
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.input_feild_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.input_feild_container i {
+  font-size: 1.8rem;
+  background-image: linear-gradient(to right bottom, var(--color_linear1), var(--color_linear2));
+  margin-right: 1rem;
+  color: hsl(0, 0%, 98%);
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.input_feild {
+  background-color: var(--color_bg_todo);
+  color: var(--color_text);
+  padding: 1.8rem 2rem;
+  margin: 3rem 0;
+  width: 100%;
+  font-size: 1.8rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.todo {
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 1.4rem;
+}
+.todo__tasks {
+  background-color: var(--color_bg_todo);
+}
+.todo__tasks .active {
+  position: relative;
+  text-decoration: line-through;
+  color: var(--color_remove);
+}
+.todo__tasks .active span i {
+  background-color: transparent;
+}
+.todo__tasks__task {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  padding: 2rem;
+  border-bottom: 1px solid var(--color_breaker);
+}
+.todo__tasks__task .check {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background-image: linear-gradient(to right bottom, var(--color_linear1), var(--color_linear2));
+  border-radius: 50%;
+}
+.todo__tasks__task .check i {
+  border-radius: 50%;
+  background-color: var(--color_bg_todo);
+  padding: 0.6rem;
+}
+.todo__tasks__task .remove_task {
+  margin-left: auto;
+  cursor: pointer;
+}
+.todo__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color_bg_todo);
+  padding: 2rem;
+  margin-bottom: auto;
+}
+.todo__controls__buttons {
+  display: flex;
+  gap: 1rem;
+  max-width: 40%;
+  cursor: pointer;
+}
+
+#all {
+  color: var(--color_primary);
+}
+
+#active {
+  color: var(--color_text);
+}
+
+#complete {
+  color: var(--color_hover);
+}
+
+#numbers {
+  cursor: pointer;
+}
+
+#clear {
+  cursor: pointer;
+}/*# sourceMappingURL=main.css.map */
