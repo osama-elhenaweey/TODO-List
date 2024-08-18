@@ -183,3 +183,32 @@ body {
 #clear {
     cursor: pointer;
 }
+@media (width <= 632px) {
+    html {
+        font-size: 56%;
+    }
+    .container {
+        max-width: 40rem;
+        margin-inline: auto;
+    }
+}
+@media (width <= 378px) {
+    html {
+        font-size: 52%;
+    }
+    .container {
+        max-width: 34rem;
+        margin-inline: auto;
+    }
+    .todo {
+        &__controls {
+            font-size: 1rem;
+            &__buttons {
+                display: flex;
+                gap: 1rem;
+                max-width: 30%;
+                cursor: pointer;
+            }
+        }
+    }
+}
